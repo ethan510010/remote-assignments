@@ -1,0 +1,96 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    color: black;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.main-header {
+    background-color: lightgrey;
+}
+
+.name {
+    margin: 0;
+    font-size: 1em;
+    font-weight: normal;
+    padding: 10px ;
+}
+
+.main-header,
+.main-nav,
+.middle-banner,
+.content {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.main-header {
+    align-items: center;
+    justify-content: space-between;
+}
+
+.main-nav {
+    margin: 0;
+    padding: 0;
+}
+
+.main-nav li {
+    flex: 1.2;
+}
+
+.middle-banner {
+    height: 250px;
+    background-color: rgba(174, 214, 241, .5);
+}
+
+.middle-banner h1,
+.content h3 {
+    margin: auto;
+}
+
+.content {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.content h3 {
+    padding: 20px;
+}
+
+ .boxes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.box {
+    background-color: rgba(26, 82, 118, .5);
+    text-align: center;
+    padding-top: 10px;
+    width: 600px;
+    height: 250px;
+    margin-bottom: 20px;
+} 
+
+.action-button {
+    background-color: rgba(174, 214, 241, .7);
+    padding: 10px 20px;
+}
+
+ /* 如果寬度大於1200px */
+ @media (min-width: 1200px) {
+    .boxes {
+        width: 1250px;
+    }
+}
