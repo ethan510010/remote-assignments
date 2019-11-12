@@ -1,5 +1,6 @@
 /* Assignment 1: Function and Array
-Complete the function below to find the ​max number​ of passing numbers. You may refer to this ​MDN document​ about rest parameters of the function. */
+Complete the function below to find the ​max number​ of passing numbers. You may refer to this ​MDN document​ about rest parameters of the function. 
+*/
 
 function max(...numbers) {
     let resultArray = [numbers[0]];
@@ -22,7 +23,8 @@ Winter 2019 / Web Class
 Remote Learning Assignment - Week 2
  In JavaScript, there are many different sets of syntax for creating objects. In the code below, 
  function parameters are encapsulated into an object, 
- try using at least ​two ways​ to create a proper object as a parameter of the calculate function.*/
+ try using at least ​two ways​ to create a proper object as a parameter of the calculate function.
+ */
 
 function calculate(args) {
     let result;
@@ -65,7 +67,46 @@ let secondArgs = {
 }
 secondArgs.n1 = 5
 secondArgs.n2 = 6
-secondArgs.op = "+" 
+secondArgs.op = "+"
 
 let secondPlusResult = calculate(secondArgs)
 console.log(secondPlusResult)
+
+/* Assignment 3: Function, Array, and Object
+Complete the function below to calculate the average price of all the products. 
+*/
+
+function avg(data) {
+    let totalPrice = 0;
+    const products = data.products;
+    for (let i = 0; i < products.length; i++) {
+        const product = products[i];
+        const price = product.price;
+        totalPrice += price;
+    }
+    if (data.hasOwnProperty('size') && !isNaN(data.size) && data.size !== "") {
+        return totalPrice / (data.size)
+    } else {
+        return totalPrice / products.length;
+    }
+}
+
+console.log(`The average price is ${
+    avg({
+    size: 3, 
+    products: [
+        {
+            name: "Product 1",
+            price: 100
+        },
+        {
+            name: "Product 2",
+            price: 700
+        },
+        {
+            name: "Product 3",
+            price: 250
+        }
+    ]
+})
+}`)
