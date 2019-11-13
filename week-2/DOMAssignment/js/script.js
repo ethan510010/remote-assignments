@@ -12,7 +12,7 @@ const actionButton = document.querySelector(".boxes-1 .call-action")
 actionButton.addEventListener('click', () => {
     isShowBoxes2 = !isShowBoxes2;
     const boxes2 = document.querySelector(".boxes-2")
-    // DOM利用media query比較
+    // https://www.w3schools.com/howto/howto_js_add_class.asp
     if (isShowBoxes2) {
         boxes2.classList.remove("boxes2-to-hide")
         boxes2.classList.add("boxes2-to-show")    
