@@ -17,3 +17,14 @@ actionButton.addEventListener('click', () => {
         boxes2.style.display = "none";
     }
 })
+
+const menuIcon = document.querySelector(".burger-icon")
+const sidebar = document.querySelector(".side-menu")
+menuIcon.addEventListener("click", () => {
+    sidebar.style.width = "50%";
+})
+
+const closeButton = document.querySelector(".side-menu .close-button")
+closeButton.addEventListener("click", () => {
+    sidebar.style.width = "0px";
+})
