@@ -7,17 +7,22 @@ banner.addEventListener('click', () => {
 
 let isShowBoxes2 = false;
 
+// https://www.w3schools.com/howto/howto_js_media_queries.asp
 const actionButton = document.querySelector(".boxes-1 .call-action")
 actionButton.addEventListener('click', () => {
     isShowBoxes2 = !isShowBoxes2;
     const boxes2 = document.querySelector(".boxes-2")
+    // DOM利用media query比較
     if (isShowBoxes2) {
-        boxes2.style.display = "flex";
+        boxes2.classList.remove("boxes2-to-hide")
+        boxes2.classList.add("boxes2-to-show")    
     } else {
-        boxes2.style.display = "none";
+        boxes2.classList.remove("boxes2-to-show")
+        boxes2.classList.add("boxes2-to-hide")    
     }
 })
 
+// 漢堡選單
 const menuIcon = document.querySelector(".burger-icon")
 const sidebar = document.querySelector(".side-menu")
 menuIcon.addEventListener("click", () => {
