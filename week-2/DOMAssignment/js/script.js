@@ -22,9 +22,11 @@ const menuIcon = document.querySelector(".burger-icon")
 const sidebar = document.querySelector(".side-menu")
 menuIcon.addEventListener("click", () => {
     sidebar.style.width = "50%";
+    sidebar.style.borderLeft = "1px solid black";
 })
 
 const closeButton = document.querySelector(".side-menu .close-button")
 closeButton.addEventListener("click", () => {
     sidebar.style.width = "0px";
+    sidebar.style.borderLeft = "0px solid black";
 })
