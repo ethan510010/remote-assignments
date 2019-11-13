@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- https://stackoverflow.com/questions/4611591/code-vs-pre-vs-samp-for-inline-and-block-code-snippets -->
+    <h3>Assignment 1: Function and Array</h3>
+    <pre class="answer1">
+        <code>
+            function max(...numbers) {
+                let resultArray = [numbers[0]];
+                for (let i = 0; i < numbers.length; i++) {
+                    if (i < numbers.length) {
+                        let resultLastItem = resultArray[resultArray.length - 1];
+                        if (numbers[i + 1] >= resultLastItem) {
+                            resultArray.push(numbers[i + 1])
+                        }
+                    }
+                }
+                console.log(resultArray[resultArray.length - 1]);
+            }
+                
+            max(1, 2, 4, 5);    // 5
+            max(5, 2, 7, 1, 6); // 7
+        </code>
+    </pre>
+    <h3>Assignment 2: Object</h3>
+    <pre class="answer2">
+            function calculate(args) {
+                let result;
+                if (args.op === "+") {
+                    result = args.n1 + args.n2;
+                } else if (args.op === "-") {
+                    result = args.n1 - args.n2;
+                } else {
+                    result = "Not supported";
+                }
+                return result;
+            }
+            
+            
+            // First way 
+            class Parameter {
+                constructor(op, n1, n2) {
+                    this.op = op;
+                    this.n1 = n1;
+                    this.n2 = n2;
+                }
+            }
+            
+            let plusArgs = new Parameter("+", 3, 5);
+            let minusArgs = new Parameter("-", 3, 5);
+            let unsupportedArgs = new Parameter("*", 3, 5);
+            
+            let plusResult = calculate(plusArgs)
+            console.log(plusResult);
+            
+            let minusResult = calculate(minusArgs)
+            console.log(minusResult)
+            
+            let unsuppoertedResult = calculate(unsupportedArgs)
+            console.log(unsuppoertedResult)
+            
+            // Second way
+            let secondArgs = {
+            
+            }
+            secondArgs.n1 = 5
+            secondArgs.n2 = 6
+            secondArgs.op = "+"
+            
+            let secondPlusResult = calculate(secondArgs)
+            console.log(secondPlusResult)
+    </pre>
+    <h3>Assignment 3: Function, Array, and Object</h3>
+    <pre class="answer3">
+        <code>
+            function avg(data) {
+                let totalPrice = 0;
+                const products = data.products;
+                for (let i = 0; i < products.length; i++) {
+                    const product = products[i];
+                    const price = product.price;
+                    totalPrice += price;
+                }
+                if (data.hasOwnProperty('size') && !isNaN(data.size) && data.size !== "") {
+                    return totalPrice / (data.size)
+                } else {
+                    return totalPrice / products.length;
+                }
+            }
+                
+            console.log(`The average price is ${
+                avg({
+                size: 3, 
+                products: [
+                    {
+                        name: "Product 1",
+                        price: 100
+                    },
+                    {
+                        name: "Product 2",
+                        price: 700
+                    },
+                    {
+                        name: "Product 3",
+                        price: 250
+                    }
+                ]
+            })
+            }`)
+        </code>
+    </pre>
+    <h3>Assignment 5: Algorithm Practice (Advanced Optional)</h3>
+    <pre class="awnser5">
+
+        function twoSum(nums, target){
+            let resultObject = {};
+            for (let i = 0; i < nums.length; i++){
+                let currentNumber = nums[i];
+                let minusResult = target - currentNumber;
+                if (minusResult in resultObject) {
+                    return [resultObject[minusResult], i]
+                }
+                resultObject[currentNumber] = i;
+            }
+        }
+
+        const result = twoSum([2,7, 11, 15], 9);
+        console.log(result)
+    </pre>
+</body>
+
+</html>
