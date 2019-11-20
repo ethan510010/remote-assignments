@@ -6,6 +6,9 @@ const trackUserRoouter = require('./routes/user.js');
 
 app.set('view engine', 'pug')
 
+// 載入靜態檔案
+app.use(express.static('public'))
+
 // Assignment1: My First Web Server
 app.get('/', (req, res) => {
     res.send("<h1>Hello, My Server!</h1>")
