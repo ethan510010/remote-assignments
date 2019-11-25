@@ -1,0 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
+.cell-phone-detail {
+    border-bottom: 0.5px solid black;
+}
