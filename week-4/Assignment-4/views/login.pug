@@ -3,6 +3,28 @@ html(lang="en")
     head 
         title Home Page
     body
-        h1 登入頁
+        h1 用戶登入頁
+        p 註冊
+        form(action="/user/home/signUp", method="POST")
+            | email:
+            input(type='text', name="email")
+            br
+            | password: 
+            input(type='password', name="password")
+            br
+            br
+            button(type='submit') &#x9001;&#x51FA;
+        hr
+        p 登入
+        form(action="/user/home/signIn", method="POST")
+            | email:
+            input(type='text', name="email")
+            br
+            | password: 
+            input(type='password', name="password")
+            br
+            br
+            button(type='submit') &#x9001;&#x51FA;
+
 
 
